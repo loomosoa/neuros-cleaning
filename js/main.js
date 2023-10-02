@@ -34,7 +34,7 @@
 // 4. audio
 // 5. youtube video
 
-console.log("Hmm");
+console.log("Hmm2");
 
 
 // #####################
@@ -119,8 +119,8 @@ function getCurrentLocale() {
 
   let locale = navigator.language.substring(0,2);
   
-  return locale;
-  // return "ru";
+  // return locale;
+  return "ru";
 }
 
 
