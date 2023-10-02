@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = neuros-cleaning
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[user]
+	name = github_loomosoa
