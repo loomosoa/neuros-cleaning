@@ -243,7 +243,8 @@ body {
 }
 
 .download-btn {
-    
+    display: flex;
+    justify-content: center;
 }
 
 .download-btn a {
@@ -261,7 +262,7 @@ body {
 
 #kind_month {
     position: relative;
-    margin: -120px 0 0 -170px;
+    margin: -2vw 0 0 -5vw;
 }
 
 
@@ -285,6 +286,7 @@ body {
 }
 
 #line-between-seanses {
+    margin: 5vw 0 0 0;
     display: flex;
     justify-content: center;
     position: relative;
@@ -518,4 +520,16 @@ body {
     color: #222222;
 
 
+}
+
+.square-left-column {
+    margin: 1vw 10vw 0 15vw;
+}
+
+.square-right-column {
+    margin: 0 0 0 10vw;
+}
+
+#square-row1 {
+    margin: 3vw 0 0 0;
 }
