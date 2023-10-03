@@ -469,6 +469,9 @@ body {
 }
 
 #footer_text {
+    justify-content: center;
+    display: flex;
+    width: 100%;
     margin: 20px 0 50px 0;
     font-family: 'Oswald', sans-serif;
     font-style: normal;
@@ -505,7 +508,7 @@ body {
 
 #lang-choice {
     position: absolute;
-    left: 86vw;
+    left: 80vw;
     top: 3vw;
     display: flex;
     cursor: pointer;
@@ -513,7 +516,7 @@ body {
 
 .lang-code {
 
-    margin: 0 7px;
+    margin: 0 14px;
     font-family: 'Oswald', sans-serif;
     font-style: normal;
     font-weight: 400;
