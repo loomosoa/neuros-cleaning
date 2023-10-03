@@ -1,4 +1,5 @@
 {
+    "site-title":"Neurosis cleaning",
     "symptoms-title": "Symptoms of neurosis",
     "smptms-1":"Emotional distress (often for no apparent reason)",
     "smptms-2":"Indecisiveness",
@@ -45,5 +46,17 @@
     "t4-2":"Fear? Guilt? Shame? Something else?",
     "t5-1":"5. Where in the body is this feeling?",
     "t5-2":"In the chest? In a stomach?",
-    "t5-3":"In the neck? In hand? Somewhere else?"
+    "t5-3":"In the neck? In hand? Somewhere else?",
+    "before-listen-1":"And having answered these questions, you can proceed to the hypnotherapy session.",
+    "before-listen-2":"Sit comfortably, where no one will distract you, take a comfortable position for your back and head",
+    "before-listen-3":"Provide conditions so that no one is distracted by turning on airplane mode on your phone and muting the sound",
+    "before-listen-4":"Better to listen with headphones",
+    "seans-safety":"Session \"Safety\"",
+    "seans-safety-1":"Improves mood",
+    "seans-safety-2":"Allows you to identify basic contradictions",
+    "seans-safety-3":"Opens access to new (forgotten) memories and sensations",
+    "seans-safety-4":"Allows you to better feel the balance and imbalance between want, can and must",
+    "price":"Price",
+    "price-free":"For free",
+    "download":"Download"
 }

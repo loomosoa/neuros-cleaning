@@ -86,35 +86,15 @@ function getBrowserLocales(options = {}) {
 
 
 
-// const translations = {
-//   // English translations
-//   "en": {
-//     "symptoms-title": "Symptoms of neurosis",
-//     "t1-what-want": "1. What do I really want?",
-//     "t1-1":"If I had the necessary financial resources, time, security - what would I do?"
-//   },
-//   // Russian translations
-//   "ru": {
-//     "symptoms-title": "Симптомы невроза",
-//     "t1-what-want": "1. Чего я хочу на самом деле?",
-//     "t1-1":"Если бы у меня были необходимые финансовые средства, время, безопасность - что я бы делал?"
-//   },
-// };
-
-
 function setImgElementLocale(element){
-  
   let locale = getCurrentLocale();
   
   let imgUrlArray = element.dataset.src.split('/');
   imgUrlArray[1] = locale; 
   element.dataset.src = imgUrlArray.join('/');
-
-
 }
 
 function getCurrentLocale() {
-
   let locale = navigator.language.substring(0,2); 
 
   if (localStorage.getItem("lang")) {
@@ -125,20 +105,16 @@ function getCurrentLocale() {
 }
 
 
-let langBtns = document.querySelectorAll(".lang-code").forEach(changeLanguage)
-
+document.querySelectorAll(".lang-code").forEach(changeLanguage);
 
 function changeLanguage(element) {
 
   element.addEventListener('click', function handleClick() {
-  
     localStorage.setItem("lang", this.dataset.lang);
-
-    console.log("call set locale");
+    
     setLocale(this.dataset.lang);
-
     updateImgsLazy();
-
+    
     location.reload();
    });
 }
@@ -180,19 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load translations for the given locale and translate
 // the page to this locale
 async function setLocale(newLocale) {
-
-  console.log('newLocale', newLocale);
-  console.log('locale in setLocale', locale);
-
   if (newLocale === locale) return;
   
   const newTranslations = await fetchTranslationsFor(newLocale);
-  
   locale = newLocale;
+  translations = newTranslations;  
   
-  translations = newTranslations;
-  
-  console.log('call translate page');
   translatePage();
 }
 
@@ -212,8 +181,7 @@ function translatePage() {
     .forEach(translateElement);
 }
 
-function translateElement(element) { 
-  console.log("performe translate element")
+function translateElement(element) {   
   const key = element.getAttribute("data-i18n-key");
   const translation = translations[key];
   element.innerText = translation;
