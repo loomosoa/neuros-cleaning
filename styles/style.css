@@ -495,3 +495,27 @@ body {
 #footer_piece {
     margin: 20px 0 55px 0;
 }
+
+
+#lang-choice {
+    position: absolute;
+    left: 86vw;
+    top: 3vw;
+    display: flex;
+    cursor: pointer;
+}
+
+.lang-code {
+
+    margin: 0 7px;
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45px;
+    text-decoration-line: underline;
+
+    color: #222222;
+
+
+}

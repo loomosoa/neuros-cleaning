@@ -36,6 +36,8 @@
 
 console.log("Hmm2");
 
+// TODO: выгрузить смол версию схемки
+
 
 // #####################
 // DETECT IP country, for resolving financial instrument
@@ -99,34 +101,49 @@ function getBrowserLocales(options = {}) {
 //   },
 // };
 
-function setImgElementLocale(element){
-  // console.log('data-src element');
-  let locale = getCurrentLocale();
-  // console.log(element);
-  // console.log(element.dataset.src);
 
+function setImgElementLocale(element){
+  
+  let locale = getCurrentLocale();
+  
   let imgUrlArray = element.dataset.src.split('/');
   imgUrlArray[1] = locale; 
   element.dataset.src = imgUrlArray.join('/');
 
-  // console.log(element.dataset.src);
-
 }
 
 function getCurrentLocale() {
-  // var locales = getBrowserLocales();    
-  // let locale = locales[0].substring(0,2);
 
-  let locale = navigator.language.substring(0,2);
-  
-  // return locale;
-  return "ru";
+  let locale = navigator.language.substring(0,2); 
+
+  if (localStorage.getItem("lang")) {
+    locale = localStorage.getItem("lang");
+  } 
+
+  return locale;
 }
 
 
+let langBtns = document.querySelectorAll(".lang-code").forEach(changeLanguage)
 
-let res = document.addEventListener("DOMContentLoaded", () => {
+
+function changeLanguage(element) {
+
+  element.addEventListener('click', function handleClick() {
   
+    localStorage.setItem("lang", this.dataset.lang);
+
+    console.log("call set locale");
+    setLocale(this.dataset.lang);
+
+    updateImgsLazy();
+
+    location.reload();
+   });
+}
+
+
+function updateImgsLazy() {
   document    
     .querySelectorAll("[data-src]")
     .forEach(setImgElementLocale);
@@ -138,11 +155,12 @@ let res = document.addEventListener("DOMContentLoaded", () => {
       // Your custom settings go here
     });
     lazyLoadInstance.update();
+}
 
-    // document
-    // // Find all elements that have the key attribute
-    // .querySelectorAll("[data-i18n-key]")
-    // .forEach(translateElement);
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  updateImgsLazy();
 
 });
 
@@ -162,6 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // the page to this locale
 async function setLocale(newLocale) {
 
+  console.log('newLocale', newLocale);
+  console.log('locale in setLocale', locale);
+
   if (newLocale === locale) return;
   
   const newTranslations = await fetchTranslationsFor(newLocale);
@@ -170,6 +191,7 @@ async function setLocale(newLocale) {
   
   translations = newTranslations;
   
+  console.log('call translate page');
   translatePage();
 }
 
@@ -190,6 +212,7 @@ function translatePage() {
 }
 
 function translateElement(element) { 
+  console.log("performe translate element")
   const key = element.getAttribute("data-i18n-key");
   const translation = translations[key];
   element.innerText = translation;
