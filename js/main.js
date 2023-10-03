@@ -110,6 +110,7 @@ function setImgElementLocale(element){
   imgUrlArray[1] = locale; 
   element.dataset.src = imgUrlArray.join('/');
 
+
 }
 
 function getCurrentLocale() {
