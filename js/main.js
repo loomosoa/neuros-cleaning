@@ -43,7 +43,7 @@ console.log("Hmm2");
 // DETECT IP country, for resolving financial instrument
 // #####################
 var countryCode = "RU"
-fetch('https://ipapi.co/176.124.146.179/json/', )
+fetch('https://ipapi.co/json/', )
 // fetch('https://ipapi.co/8.8.8.8/json/', )
   .then(function(response) {
     return response.json();
@@ -53,6 +53,8 @@ fetch('https://ipapi.co/176.124.146.179/json/', )
     if (data.country_code != "RU") {
       countryCode = "EN"        
     }     
+
+    console.log("data, my ip", data)
 });
 
 
@@ -168,7 +170,7 @@ async function setLocale(newLocale) {
 // Retrieve translations JSON object for the given
 // locale over the network
 async function fetchTranslationsFor(newLocale) {
-  const response = await fetch(`/lang/${newLocale}.json`);
+  const response = await fetch(`lang/${newLocale}.json`);
   return await response.json();
 }
 
