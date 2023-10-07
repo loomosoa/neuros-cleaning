@@ -126,6 +126,18 @@ body {
     margin: 35px 0;
 }
 
+
+#row_tip_additional {
+    display: flex;
+    flex-direction: column;
+}
+
+.tip_additional {
+    margin: 30px 120px 0 120px;
+    font-size: 40px;
+    line-height: 45px;
+}
+
 .to-right-side {
     display: flex;
     justify-content: right;
