@@ -107,7 +107,7 @@ function getCurrentLocale() {
 }
 
 
-document.querySelectorAll(".lang-code").forEach(changeLanguage);
+// document.querySelectorAll(".lang-code").forEach(changeLanguage);
 
 function changeLanguage(element) {
 
@@ -149,10 +149,10 @@ const defaultLocale = getCurrentLocale();
 let locale;
 let translations = {};
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
   
-  setLocale(defaultLocale);
-});
+//   setLocale(defaultLocale);
+// });
 
 
 // Load translations for the given locale and translate
