@@ -51,7 +51,7 @@ fetch('https://ipapi.co/json/', )
   .then(function(data) {
     
     if (data.country_code != "RU") {
-      countryCode = "EN"        
+      countryCode = "RU"
     }     
 
     console.log("data, my ip", data)
