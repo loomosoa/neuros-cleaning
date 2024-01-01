@@ -188,10 +188,12 @@ body {
 
 
 #bear_fix_himself {
-    margin: 0 200px 0 0;
+    margin: 70px 200px 0 135px;
     width: 25%;
     position: relative;
+    max-width: 300px;
     top: 0px;
+    max-height: 340px;
 }
 
 .seans-properties-list li {
@@ -306,11 +308,13 @@ body {
     /* top: -150px; */
 }
 
+
 #bear_presents {
-    margin: 0 200px 0 0;
-    width: 25%;
+    margin: 70px 200px 0 115px;
+    max-width: 300px;
     position: relative;
     top: 0px;
+    max-height: 356px;
 }
 
 #wachine_machine_cycle {
@@ -477,6 +481,10 @@ body {
 }
 
 #feedback_line {
+    width: 45%;
+}
+
+#feedback_line2 {
     width: 45%;
 }
 
